@@ -35,7 +35,7 @@ export default {
       user: { //用户信息
         userName: null,
         userId: null
-      } 
+      }
     }
   },
   created() {
@@ -82,7 +82,7 @@ export default {
 #topbar {
   position: relative;
   z-index: 10;
-  background-color: #124280;
+  background-color: #b0cef5;
   height: 80px;
   line-height: 80px;
   color: #fff;
