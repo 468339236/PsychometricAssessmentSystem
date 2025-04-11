@@ -1,7 +1,7 @@
 // 我的试卷页面
 <template>
   <div id="myExam">
-    <div class="title">我的试卷</div>
+    <div class="title">我的测试</div>
     <div class="wrapper">
       <ul class="top">
         <li class="order">试卷列表</li>
@@ -54,7 +54,7 @@ export default {
     this.loading = true
   },
   // watch: {
-    
+
   // },
   methods: {
     //获取当前所有考试信息

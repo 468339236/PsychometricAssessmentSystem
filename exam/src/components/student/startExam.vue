@@ -1,10 +1,10 @@
-// 我的考试页面
+// 我的测试页面
 <template>
   <div id="myExam">
     <div class="title">我的练习</div>
     <div class="wrapper">
       <ul class="top">
-        <li class="search-li"><div class="icon"><input type="text" placeholder="试卷名称" class="search" v-model="key"><i class="el-icon-search"></i></div></li>
+        <li class="search-li"><div class="icon"><input type="text" placeholder="测试名称" class="search" v-model="key"><i class="el-icon-search"></i></div></li>
         <li><el-button type="primary" @click="search()">搜索试卷</el-button></li>
       </ul>
       <ul class="paper" v-loading="loading">

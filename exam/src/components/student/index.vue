@@ -1,11 +1,11 @@
-<!--学生考试首页-->
+<!--学生测试首页-->
 <template>
   <div id="student">
     <el-row class="padding-50">
       <el-col :span="24">
         <ul class="list">
-          <li class="logo"><i class="iconfont icon-kaoshi"></i><span>Exam-Online</span></li>
-          <li><a href="javascript:;" @click="exam()">我的试卷</a></li>
+          <li class="logo"><i class="iconfont icon-time"></i><span>PsyTest-Online</span></li>
+          <li><a href="javascript:;" @click="exam()">我的测试</a></li>
           <li><a href="javascript:;" @click="practice()">我的练习</a></li>
           <li><router-link to="/scoreTable">我的分数</router-link></li>
           <li><router-link to="/message">给我留言</router-link></li>
@@ -119,7 +119,7 @@ li {
 #student .list .logo {
   display: flex;
   font-weight: bold;
-  color: #2f6c9f;
+  color: #1e6b83;
 }
 #student .list .logo i {
   font-size: 50px;

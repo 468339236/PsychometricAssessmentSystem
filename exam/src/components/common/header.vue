@@ -3,8 +3,8 @@
   <header id="topbar">
     <el-row>
       <el-col :span="4" class="topbar-left">
-        <i class="iconfont icon-kaoshi"></i>
-        <span class="title" @click="index()">EXAM-SYSTEM</span>
+        <i class="iconfont icon-time"></i>
+        <span class="title" @click="index()">PsyTEST-SYSTEM</span>
       </el-col>
       <el-col :span="20" class="topbar-right">
         <i class="el-icon-menu" @click="toggle()"></i>
@@ -82,11 +82,11 @@ export default {
 #topbar {
   position: relative;
   z-index: 10;
-  background-color: #b0cef5;
+  background-color: #33ccbb;
   height: 80px;
   line-height: 80px;
   color: #fff;
-  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 0px 10px rgba(196, 27, 27, 0.5);
 }
 #topbar .topbar-left {
   height: 80px;
@@ -144,11 +144,11 @@ export default {
 }
 .out a {
   text-decoration: none;
-  color: #000;
+  color: #c73c3c;
 }
 .out .exit {
   margin-top: 4px;
   padding-top: 4px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #97d990;
 }
 </style>
