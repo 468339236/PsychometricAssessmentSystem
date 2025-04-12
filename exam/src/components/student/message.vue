@@ -235,7 +235,7 @@ export default {
         position: absolute;
         right: 30px;
         bottom: 15px;
-        color: tomato;
+        color: #53baea;
         cursor: pointer;
         transition: all .3s ease;
       }

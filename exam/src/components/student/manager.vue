@@ -90,7 +90,7 @@
 
 <style scoped>
 #manager .pass  label{
-  color: red;
+  color: #c73c3c;
   font-size: 20px;
 }
 #manager {

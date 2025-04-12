@@ -4,9 +4,9 @@
     <div class="title">我的测试</div>
     <div class="wrapper">
       <ul class="top">
-        <li class="order">试卷列表</li>
+        <li class="order">量表列表</li>
         <li class="search-li"><div class="icon"><input type="text" placeholder="试卷名称" class="search" v-model="key"><i class="el-icon-search"></i></div></li>
-        <li><el-button type="primary" @click="search()">搜索试卷</el-button></li>
+        <li><el-button type="primary" @click="search()">搜索量表</el-button></li>
       </ul>
       <ul class="paper" v-loading="loading">
         <li class="item" v-for="(item,index) in pagination.records" :key="index">
@@ -77,7 +77,7 @@ export default {
       this.pagination.current = val
       this.getExamInfo()
     },
-    //搜索试卷
+    //搜索量表
     search() {
       this.$axios('/api/exams').then(res => {
         if(res.data.code == 200) {

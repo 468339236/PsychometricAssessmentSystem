@@ -376,28 +376,31 @@ export default {
     },
     commit() { //答案提交计算分数
       /* 计算选择题总分 */
-      let topic1Answer = this.topic1Answer
-      let finalScore = 0
+      let topic1Answer = this.topic1Answer; // 用户的选择题答案数组
+      let finalScore = 0; // 初始化总分为 0
+
       topic1Answer.forEach((element,index) => { //循环每道选择题根据选项计算分数
-        let right = null
-        if(element != null) {
-          switch(element) { //选项1,2,3,4 转换为 "A","B","C","D"
-            case 1:
-              right = "A"
-              break
-            case 2:
-              right = "B"
-              break
-            case 3:
-              right = "C"
-              break
-            case 4:
-              right = "D"
+        if (element != null) {
+          let scoreForOption = 0; // 初始化当前选项的得分为 0
+
+          switch (element) { // 根据用户选择的选项分配分数
+            case 1: // 用户选择了 A
+              scoreForOption = 4;
+              break;
+            case 2: // 用户选择了 B
+              scoreForOption = 3;
+              break;
+            case 3: // 用户选择了 C
+              scoreForOption = 2;
+              break;
+            case 4: // 用户选择了 D
+              scoreForOption = 1;
+              break;
           }
-          if(right == this.topic[1][index].rightAnswer) { // 当前选项与正确答案对比
-            finalScore += this.topic[1][index].score // 计算总分数
-          }
-          console.log(right,this.topic[1][index].rightAnswer)
+
+          finalScore += scoreForOption; // 将当前选项的得分累加到总分中
+          console.log(`Question ${index + 1}: Selected Option ${element}, Score Added: ${scoreForOption}`);
+
         }
         // console.log(topic1Answer)
       })

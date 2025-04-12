@@ -17,7 +17,7 @@ public class ExamManageController {
 
     @GetMapping("/exams")
     public ApiResult findAll(){
-        System.out.println("不分页查询所有试卷");
+        System.out.println("不分页查询所有量表");
         ApiResult apiResult;
         apiResult = ApiResultHandler.buildApiResult(200, "请求成功！", examManageService.findAll());
         return apiResult;
@@ -25,7 +25,7 @@ public class ExamManageController {
 
     @GetMapping("/exams/{page}/{size}")
     public ApiResult findAll(@PathVariable("page") Integer page, @PathVariable("size") Integer size){
-        System.out.println("分页查询所有试卷");
+        System.out.println("分页查询所有量表");
         ApiResult apiResult;
         Page<ExamManage> examManage = new Page<>(page,size);
         IPage<ExamManage> all = examManageService.findAll(examManage);
