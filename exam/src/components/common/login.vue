@@ -5,7 +5,7 @@
     <el-row class="main-container">
       <el-col :lg="8" :xs="16" :md="10" :span="10">
         <div class="top">
-          <i class="iconfont icon-kaoshi"></i><span class="title">在线考试系统</span>
+           <span class="title">在线心理测试系统</span>
         </div>
         <div class="bottom">
           <div class="container">
@@ -165,7 +165,7 @@ a:link {
 #login .main-container .top {
   margin-top: 100px;
   font-size: 30px;
-  color: #ff962a;
+  color: #11c7b1;
   display: flex;
   justify-content: center;
 }
@@ -197,7 +197,7 @@ a:link {
 
 .bottom .submit .row-login {
   width: 100%;
-  background-color: #04468b;
+  background-color: #1a6960;
   border-color: #04468b;
   margin: 20px 0px 10px 0px;
   padding: 15px 20px;
@@ -227,7 +227,7 @@ a:link {
 
 .bottom .options {
   margin-bottom: 40px;
-  color: #ff962a;
+  color: #33ccbb;
   display: flex;
   justify-content: space-between;
 }
@@ -239,4 +239,15 @@ a:link {
 .bottom .options .register span:nth-child(1) {
   color: #8C8C8C;
 }
+.iconfont {
+  font-size: 1em;      /* 继承父级字体大小 */
+  vertical-align: middle; /* 垂直对齐方式 */
+  line-height: 1;      /* 清除行高影响 */
+}
+
+.title {
+  font-size: 1em;      /* 保持与图标相同大小 */
+  vertical-align: middle; /* 匹配对齐方式 */
+}
+
 </style>
