@@ -1,10 +1,11 @@
 <template>
   <div class="score">
-    <div class="title">
-      <p class="name">计算机网络</p>
-      <p class="description">(总分：100分,限时：100分钟)</p>
-      <p class="description">学生：{{studentName}}</p>
-    </div>
+<!--    <div class="title">-->
+<!--      <p class="name"></p>-->
+<!--      <p class="description">(总分：100分,限时：20分钟)</p>-->
+<!--      <p class="description">学生：{{user.userName}}</p>-->
+<!--    </div>-->
+    <div class="title"></div>
     <div class="total">
       <div class="look">
         本次测试成绩
@@ -38,6 +39,10 @@ export default {
       isTransition: false, //是否渲染完成
       score: 0, //总分
       imgShow: false, //不及格图片显示
+      user: { //用户信息
+        userName: null,
+        userId: null
+      },
       imgSrc: {
         fail1: require("@/assets/img/cry1.gif"),
         fail2: require('@/assets/img/cry2.jpg'),
@@ -47,6 +52,7 @@ export default {
       startTime: null, //考试开始时间
       endTime: null, //考试结束时间
     }
+
   },
   created() {
     this.transiton()
@@ -66,7 +72,13 @@ export default {
       this.score = score
       this.startTime = startTime
       this.endTime = endTime
-    }
+    },
+    getUserInfo() { //获取用户信息
+      let userName = this.$cookies.get("cname")
+      let userId = this.$cookies.get("cid")
+      this.user.userName = userName
+      this.user.userId = userId
+    },
   }
 }
 </script>

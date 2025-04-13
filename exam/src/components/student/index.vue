@@ -6,10 +6,10 @@
         <ul class="list">
           <li class="logo"><i class="iconfont icon-time"></i><span>PsyTest-Online</span></li>
           <li><a href="javascript:;" @click="exam()">我的测试</a></li>
-          <li><a href="javascript:;" @click="practice()">我的练习</a></li>
+<!--          <li><a href="javascript:;" @click="practice()">我的练习</a></li>-->
           <li><router-link to="/scoreTable">我的分数</router-link></li>
-          <li><router-link to="/message">给我留言</router-link></li>
-          <li><a href="javascript:;">待定</a></li>
+          <li><router-link to="/message">互助留言</router-link></li>
+          <li><a href="javascript:;" @click="analyse()">分析报告</a></li>
           <li class="right" @mouseenter="flag = !flag" @mouseleave="flag = !flag">
             <a href="javascript:;"><i class="iconfont icon-Userselect icon"></i>{{user.userName}}</a>
             <div class="msg" v-if="flag">
@@ -31,6 +31,7 @@
 <script>
 import myFooter from "@/components/student/myFooter"
 import {mapState} from 'vuex'
+import analyse from "./analyse.vue";
 export default {
   components: {
     "v-footer": myFooter
@@ -70,7 +71,11 @@ export default {
      let isPractice = false
       this.$store.commit("practice", isPractice)
       this.$router.push({path:'/student'})
+    },
+    analyse(){
+      this.$router.push({path: '/analyse'})
     }
+
   },
   computed:mapState(["isPractice"])
 }
