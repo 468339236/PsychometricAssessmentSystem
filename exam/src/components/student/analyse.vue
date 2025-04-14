@@ -19,13 +19,13 @@
       <div class="title1">
         <el-input
           placeholder="输入id进行查询"
-          v-model="title"
+          v-model="studentId"
           clearable>
         </el-input>
       </div>
       <div class="content">
       <div class="btn">
-        <el-button type="primary" @click="submit()">提交分析</el-button>
+        <el-button type="primary" @click="submitAnalysis()">提交分析</el-button>
       </div>
       </div>
       <div v-if="result">
@@ -35,6 +35,7 @@
 
   </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -48,17 +49,28 @@ export default {
   },
   methods: {
     async submitAnalysis() {
+      if (!this.studentId) {
+        this.$message({
+          type: 'error',
+          message: '学生 ID 不能为空',
+        });
+        return;
+      }
+
       try {
         const response = await axios.post('/api/analyze', { studentId: this.studentId });
         this.result = response.data;
       } catch (error) {
         console.error('分析失败:', error);
+        this.$message({
+          type: 'error',
+          message: '分析失败，请稍后再试',
+        });
       }
-    },
+    }
   },
 };
 </script>
-
 <style lang="less" scoped>
 .pagination {
   display: flex;
