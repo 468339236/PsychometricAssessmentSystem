@@ -21,6 +21,7 @@ public class MessageServiceImpl implements MessageService {
         return messageMapper.findAll(page);
     }
 
+
     @Override
     public Message findById(Integer id) {
         return messageMapper.findById(id);
