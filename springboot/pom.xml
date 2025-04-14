@@ -76,6 +76,11 @@
             <artifactId>spring-tx</artifactId>
             <version>4.3.9.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version>
+        </dependency>
     </dependencies>
 
     <build>
