@@ -8,7 +8,7 @@ public class AnalyseResult {
     private String examCode;      // 考试代码
     private String studentId;      // 学生 ID
     private Double etScore;        // 考试分数
-    private Date answerDate;       // 答题日期
+    private String answerDate;       // 答题日期
     private String source;         // 数据来源
 
 
@@ -44,11 +44,11 @@ public class AnalyseResult {
         this.etScore = etScore;
     }
 
-    public Date getAnswerDate() {
+    public String getAnswerDate() {
         return answerDate;
     }
 
-    public void setAnswerDate(Date answerDate) {
+    public void setAnswerDate(String answerDate) {
         this.answerDate = answerDate;
     }
 
@@ -73,6 +73,13 @@ public class AnalyseResult {
                 ", source='" + source + '\'' +
                 '}';
     }
-
+    public AnalyseResult(String scoreId, String examCode, String studentId, double etScore, String answerDate, String source) {
+        this.scoreId = scoreId;
+        this.examCode = examCode;
+        this.studentId = studentId;
+        this.etScore = etScore;
+        this.answerDate = answerDate;
+        this.source = source;
+    }
 
 }

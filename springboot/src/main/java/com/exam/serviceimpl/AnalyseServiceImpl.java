@@ -12,12 +12,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class AnalyseServiceImpl implements AnalyseService {
+    @Autowired
     private  AnalyseMapper analyseMapper;
 
-    @Autowired
-    public AnalyseServiceImpl(AnalyseMapper analyseMapper) {
-        this.analyseMapper = analyseMapper;
-    }
+
+//    public AnalyseServiceImpl(AnalyseMapper analyseMapper) {
+//        this.analyseMapper = analyseMapper;
+//    }
 
     @Override
     public List<AnalyseResult> findScoresWithExamName(String studentId) {

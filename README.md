@@ -4,12 +4,6 @@
 
      该项目是一个前后端分离，后端使用 SpringBoot，前端使用 VUE 和 Element-UI 组件库配合完成开发。
 
-* ## 在线浏览地址
-    温馨提示：请登录后台的朋友,不要删除计算机网络这套试卷，因为目前只添加了这套试卷的题目作为测试，删了，其他人就不能答题了。
-    
-    [在线考试系统](http://124.223.53.193/ "在线考试系统")
-    QQ交流群：726054670
-
 
 * ## 页面截图
   ![登录](https://github.com/YXJ2018/SpringBoot-Vue-OnlineExam/blob/master/img/%E7%99%BB%E5%BD%95.png?raw=true)
