@@ -49,13 +49,15 @@ public class SiliconFlowServiceImpl implements SiliconFlowService {
         // 将 AnalyseResult 列表转换为适合 API 的输入格式
         StringBuilder contentBuilder = new StringBuilder();
         contentBuilder.append("请根据以下要求和输入数据，直接分点列出结论，不要包含任何分析过程或解释。\n" +
+                "\n" +
                 "要求：\n" +
-                "1. 数据未去重：每个学生每日每类测试仅保留最新记录。\n" +
+                "1. 数据未去重：每个学生每日每类测试仅保留最新记录（以 `Score ID` 最大值为准）。\n" +
                 "2. 自主过滤无效数据：得分小于0或早于2025年的记录应被过滤。\n" +
                 "3. 关键字段说明：\n" +
                 "   - `etScore` 是抑郁测试得分，范围为 0-100，分数越高风险越低。\n" +
                 "   - `source` 固定为“抑郁测试”。\n" +
-                " 需要回答的问题：\n" +
+                "\n" +
+                "### 需要回答的问题：\n" +
                 "1. 抑郁得分随时间的变化趋势。\n" +
                 "2. 是否存在单日多次测试的异常模式（已去重，可忽略）。\n" +
                 "3. 根据国际标准（如 PHQ-9），评估学生的抑郁风险等级。");
@@ -73,7 +75,7 @@ public class SiliconFlowServiceImpl implements SiliconFlowService {
 
         // 构造最终的请求体 JSON
         return "{\n" +
-                "  \"model\": \"Qwen/QwQ-32B\",\n" +
+                "  \"model\": \"Qwen/Qwen2.5-VL-32B-Instruct\",\n" +
                 "  \"messages\": [\n" +
                 "    {\n" +
                 "      \"role\": \"user\",\n" +
