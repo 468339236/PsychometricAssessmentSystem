@@ -28,14 +28,14 @@
         <el-button type="primary" @click="submitAnalysis()">提交分析</el-button>
       </div>
       </div>
-      <div v-if="result">
+      <div v-if="result" class="result-content" >
         <p>分析结果：{{ result }}</p>
       </div>
+
     </div>
 
   </div>
 </template>
-
 
 <script>
 import axios from 'axios';
@@ -45,8 +45,26 @@ export default {
     return {
       studentId: '',
       result: null,
+
     };
+
   },
+  // computed: {
+  //   resContent() {
+  //     if (!this.result || !this.result.content) return '';
+  //     // 将换行符替换为 <br>
+  //     return this.result.content.split('').map(item => item === '\n' ? '<br>' : item).join('');
+  //   }
+  // },
+  computed: {
+    resContent() {
+      if (!this.result || !this.result.content) return '';
+      // 将换行符替换为 <br>
+      return this.result.content.split('').map(item => item === '\n' ? '<br>' : item).join('');
+    }
+  },
+
+
   methods: {
     async submitAnalysis() {
       if (!this.studentId) {
@@ -60,6 +78,19 @@ export default {
       try {
         const response = await axios.post('/api/analyze', { studentId: this.studentId });
         this.result = response.data;
+        console.log(typeof response.data); // 输出 "object" 或 "string"
+        const jsonStartIndex = this.result.indexOf('{');
+        const plainText = this.result.substring(0, jsonStartIndex).trim(); // 普通文本部分
+        const jsonDataString = this.result.substring(jsonStartIndex); // JSON 数据部分
+        console.log(jsonDataString);
+        const jsonData = JSON.parse(jsonDataString);
+        const choices = jsonData.choices;
+
+        if (choices && choices.length > 0) {
+          this.result = choices[0].message.content; // 获取 content
+        } else {
+          this.result = '未找到分析结果';
+        }
       } catch (error) {
         console.error('分析失败:', error);
         this.$message({
@@ -75,6 +106,12 @@ export default {
 .pagination {
   display: flex;
   justify-content: center;
+}
+.result-content {
+  white-space: pre-line;
+  line-height: 1.6;
+  /* 如果需要保留缩进 */
+  /* white-space: pre-wrap; */
 }
 #message {
   width: 980px;

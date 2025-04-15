@@ -33,6 +33,7 @@ public class AnalyseController {
         //System.out.println("接收到的学生 ID: " + studentId);
         List<AnalyseResult> results = analyseService.findScoresWithExamName(studentId);
         String res= siliconFlowService.analyseResultsWithSiliconFlow(results);
+        System.out.println(res);
         // 返回结果
         return ResponseEntity.ok("获取到学生 ID: " + studentId+res);
     }
